@@ -162,7 +162,7 @@ with st.sidebar:
     for session_id, created_at, last_updated in sessions:
         first_message = get_first_user_message(session_id)
         # Truncate message to 50 characters and add ellipsis if needed
-        display_text = (first_message[:47] + "...") if len(first_message) > 50 else first_message
+        display_text = (first_message[:24] + "...") if len(first_message) > 27 else first_message
         
         if st.button(display_text, key=session_id):
             st.session_state.session_id = session_id
